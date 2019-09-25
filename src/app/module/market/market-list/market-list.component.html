@@ -1,0 +1,18 @@
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First</th>
+    <th scope="col">Last</th>
+    <th scope="col">Handle</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let market of markets">
+    <th scope="row">{{ market.id }}</th>
+    <td>{{ market.name }}</td>
+    <td>{{ market.createdAt }}</td>
+    <td>{{ market.status }}</td>
+  </tr>
+  </tbody>
+</table>
