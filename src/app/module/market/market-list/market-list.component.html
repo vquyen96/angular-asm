@@ -15,7 +15,9 @@
     <td>{{ market.description }}</td>
     <td>{{ market.createdAt | date: 'h:mm a dd/MM/yyyy'}}</td>
     <td>
-      {{ market.status }}</td>
+      <span class="badge badge-success" *ngIf="market.status == 1">Active</span>
+      <span class="badge badge-danger" *ngIf="market.status == 0">Deactive</span>
+    </td>
   </tr>
   </tbody>
 </table>

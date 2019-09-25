@@ -22,7 +22,10 @@
     <td>{{ coin.volumn24h }}</td>
     <td>{{ coin.marketName }}</td>
     <td>{{ coin.createdAt | date: 'h:mm a dd/MM/yyyy'}}</td>
-    <td>{{ coin.status }}</td>
+    <td>
+      <span class="badge badge-success" *ngIf="coin.status == 0">Active</span>
+      <span class="badge badge-danger" *ngIf="coin.status == 1">Deactive</span>
+    </td>
   </tr>
   </tbody>
 </table>

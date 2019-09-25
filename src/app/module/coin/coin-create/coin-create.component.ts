@@ -45,10 +45,7 @@ export class CoinCreateComponent implements OnInit {
           name : this.marketName
         }
       };
-      this.http.post(this.endpoint + 'coins', this.body).subscribe((data) => console.log(data));
-      this.router.navigate(['/coin']);
-    } else {
-
+      this.http.post(this.endpoint + 'coins', this.body).subscribe((data) => this.router.navigate(['/coin']));
     }
   }
 }
