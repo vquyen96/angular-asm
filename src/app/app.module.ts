@@ -11,8 +11,9 @@ import {MarketListComponent} from './module/market/market-list/market-list.compo
 import { CoinListComponent } from './module/coin/coin-list/coin-list.component';
 import { CoinCreateComponent } from './module/coin/coin-create/coin-create.component';
 import { UserPageComponent } from './module/user/user-page/user-page.component';
-import {MarketCreateComponent} from './module/market/market-create/market-create.component';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {MarketCreateComponent} from './module/market/market-create/market-create.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'coin',
     component: CoinListComponent
+  },
+  {
+    path: 'coin-create',
+    component: CoinCreateComponent
   },
   {
     path: 'user',
@@ -50,6 +55,7 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     AlertModule.forRoot(),
+    HttpClientModule,
     FormsModule
   ],
   providers: [],

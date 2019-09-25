@@ -1,1 +1,42 @@
-<p>user-page works!</p>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <input type="text" class="form-control" [ngModel]="search">
+  </div>
+  <div class="col-md-4">
+      <select type="text" class="form-control" [(ngModel)]="marketName" >
+        <option value="{{ market.name }}" *ngFor="let market of markets ">{{ market.name }}</option>
+      </select>
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-primary float-right" (click)="onSearch()">Search</button>
+  </div>
+</div>
+
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">BaseAsset</th>
+    <th scope="col">QuoteAsset</th>
+    <th scope="col">LastPrice</th>
+    <th scope="col">Volumn24h</th>
+    <th scope="col">Market</th>
+    <th scope="col">Created At</th>
+    <th scope="col">Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let coin of httpData">
+    <th scope="row">{{ coin.coinId }}</th>
+    <td>{{ coin.name }}</td>
+    <td>{{ coin.baseAsset }}</td>
+    <td>{{ coin.quoteAsset }}</td>
+    <td>{{ coin.lastPrice }}</td>
+    <td>{{ coin.volumn24h }}</td>
+    <td>{{ coin.marketName }}</td>
+    <td>{{ coin.createdAt | date: 'h:mm a dd/MM/yyyy'}}</td>
+    <td>{{ coin.status }}</td>
+  </tr>
+  </tbody>
+</table>

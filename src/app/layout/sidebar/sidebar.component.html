@@ -6,8 +6,16 @@
     <a class="nav-link " *ngIf="this.router.url != '/market'" routerLink="market">Market List</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link active" *ngIf="this.router.url == '/market-create'" routerLink="market-create">Market Create</a>
+    <a class="nav-link " *ngIf="this.router.url != '/market-create'" routerLink="market-create">Market Create</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link active" *ngIf="this.router.url == '/coin'" routerLink="coin">Coin List</a>
     <a class="nav-link " *ngIf="this.router.url != '/coin'" routerLink="coin">Coin List</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" *ngIf="this.router.url == '/coin-create'" routerLink="coin-create">Coin Create</a>
+    <a class="nav-link " *ngIf="this.router.url != '/coin-create'" routerLink="coin-create">Coin Create</a>
   </li>
   <li class="nav-item">
     <a class="nav-link active" *ngIf="this.router.url == '/user'" routerLink="user">Use page</a>

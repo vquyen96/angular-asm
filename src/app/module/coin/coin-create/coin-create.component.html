@@ -1,1 +1,29 @@
-<p>coin-create works!</p>
+<div class="form-group">
+  <label >Name</label>
+  <input type="text" class="form-control" name="name" placeholder="Name" [(ngModel)]="name" required>
+</div>
+<div class="form-group">
+  <label>Base Asset</label>
+  <input type="text" class="form-control" [(ngModel)]="baseAsset" required>
+</div>
+<div class="form-group">
+  <label>Quote Asset</label>
+  <input type="text" class="form-control" [(ngModel)]="quoteAsset" required>
+</div>
+<div class="form-group">
+  <label>Last Price</label>
+  <input type="text" class="form-control" [(ngModel)]="lastPrice" required>
+</div>
+<div class="form-group">
+  <label>Volume 24h</label>
+  <input type="text" class="form-control" [(ngModel)]="volumn24h" required>
+</div>
+<div class="form-group">
+  <label>Market Name</label>
+  <select type="text" class="form-control" [(ngModel)]="marketName" >
+    <option value="{{ market.name }}" *ngFor="let market of markets ">{{ market.name }}</option>
+  </select>
+</div>
+
+
+<button type="button" class="btn btn-primary" (click)="submit()">Submit</button>

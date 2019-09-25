@@ -1,6 +1,6 @@
 export class Market {
   constructor(
-    public id: number,
+    public marketId: number,
     public name: string,
     public description: string,
     public createdAt: string,

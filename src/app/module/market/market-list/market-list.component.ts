@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {Market} from '../../../entity/market';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-market-list',
@@ -9,16 +11,14 @@ import {Market} from '../../../entity/market';
 })
 export class MarketListComponent implements OnInit {
 
-  markets = [
-    new Market(1, 'Helo', 'Hello', '2109', '', 1),
-    new Market(2, 'Helo2', 'Hello', '2109', '', 1),
-    new Market(3, 'Helo3', 'Hello', '2109', '', 1),
-    new Market(4, 'Helo4', 'Hello', '2109', '', 1)
-  ];
-
-  constructor() { }
-
+  endpoint = 'http://localhost:8080/api/v1/';
+  constructor(private http: HttpClient) { }
+  httpData;
   ngOnInit() {
+    this.http.get(this.endpoint + 'markets').subscribe((data) => this.displayData(data));
   }
+
+  displayData(data) {this.httpData = data.data; }
+
 
 }

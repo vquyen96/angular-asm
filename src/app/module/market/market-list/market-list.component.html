@@ -2,17 +2,20 @@
   <thead class="thead-light">
   <tr>
     <th scope="col">#</th>
-    <th scope="col">First</th>
-    <th scope="col">Last</th>
-    <th scope="col">Handle</th>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Crated At</th>
+    <th scope="col">Status</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let market of markets">
-    <th scope="row">{{ market.id }}</th>
+  <tr *ngFor="let market of httpData">
+    <th scope="row">{{ market.marketId }}</th>
     <td>{{ market.name }}</td>
-    <td>{{ market.createdAt }}</td>
-    <td>{{ market.status }}</td>
+    <td>{{ market.description }}</td>
+    <td>{{ market.createdAt | date: 'h:mm a dd/MM/yyyy'}}</td>
+    <td>
+      {{ market.status }}</td>
   </tr>
   </tbody>
 </table>
